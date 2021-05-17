@@ -28,15 +28,17 @@ public class fileHandler {
             return nodes.get(id);
     }
 
-    public static String searchFile(ConcurrentHashMap<Integer, File> filesMap,String fileName){
+    public static int searchFile(ConcurrentHashMap<Integer, File> filesMap,String fileName){
         int hash=Hasher.hashCode(fileName);
 
         for (ConcurrentHashMap.Entry<Integer, File> entry : filesMap.entrySet()) {
             if(hash==entry.getKey()){
-                return "Filename with ID "+entry.getKey()+" is located at node with ID "+ entry.getValue().getNodeID();
+                //return "Filename with ID "+entry.getKey()+" is located at node with ID "+ entry.getValue().getNodeID();
+                return entry.getValue().getNodeID();
             }
         }
-        return "could not find the file you were looking for.";
+        //return "could not find the file you were looking for.";
+        return 0;
     }
 
     public static String getHash(String name){

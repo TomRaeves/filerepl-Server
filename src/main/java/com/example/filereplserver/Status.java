@@ -17,7 +17,7 @@ public class Status {
         while (iterator.hasNext()) {
             counter++;
             Map.Entry<Integer, File> entry = iterator.next();
-            System.out.println("File "+counter+" with Name: "+entry.getValue().getFilename()+", ID: "+entry.getKey());
+            System.out.println("File "+counter+" with Name: "+entry.getValue().getFilename()+", ID: "+entry.getKey()+", NodeID: "+fileHandler.searchFile(fileHandler.filesMap,entry.getValue().getFilename()));
         }
     }
 
