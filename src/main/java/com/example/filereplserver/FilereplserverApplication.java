@@ -13,6 +13,7 @@ public class FilereplserverApplication {
 	private static final int receivePort = 4501;
 	private static final int sendPort = 4500;
 	private static final int multicastPort = 3456;
+	private static final int TCPMessageReceivePort = 5000;
 	private static final String multicastAddress = "225.10.10.10";
 	private static boolean running = true;
 
@@ -21,6 +22,8 @@ public class FilereplserverApplication {
 		UDP.start();
 		UDPMultiServer UDPM = new UDPMultiServer(multicastPort,multicastAddress,sendPort);
 		UDPM.start();
+		TCPServer TCP = new TCPServer(TCPMessageReceivePort);
+		TCP.start();
 		System.out.println("starting REST server... To stop the server type in Exit");
 		ConfigurableApplicationContext ctx = SpringApplication.run(FilereplserverApplication.class, args);
 		Scanner sc = new Scanner(System.in);
@@ -38,7 +41,7 @@ public class FilereplserverApplication {
 					UDPM.shutdown();
 					System.out.println("Stopping RESTServer...");
 					ctx.close();
-					System.out.println("Stopping DiscoveryServer...");
+					System.out.println("Stopping Replication server...");
 					running = false;
 					break;
 
