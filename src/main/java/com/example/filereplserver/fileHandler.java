@@ -12,7 +12,7 @@ public class fileHandler {
         System.out.println("Adding the following file to the files hashmap: " +filename);
         File temp = new File(filename, nodeHash, nodesMap);
         filesMap.put(temp.getHash(),temp);
-        System.out.println("File added to node with nodeID: "+temp.getHash()+" with filename: "+filename);
+        System.out.println("File added to node with fileID: "+temp.getHash()+" with filename: "+filename);
     }
 
     public static String getIP (String name,ConcurrentHashMap<Integer, String> nodes){
