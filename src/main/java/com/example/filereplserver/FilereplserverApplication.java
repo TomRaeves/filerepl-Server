@@ -13,7 +13,7 @@ public class FilereplserverApplication {
 	private static final int receivePort = 4501;
 	private static final int sendPort = 4500;
 	private static final int multicastPort = 3456;
-	private static final int TCPMessageReceivePort = 5000;
+	private static final int TCPMessageReceivePort = 5500;
 	private static final String multicastAddress = "225.10.10.10";
 	private static boolean running = true;
 
