@@ -11,5 +11,4 @@ public class Controller {
         System.out.println("Someone requests nodes hashMap ");
         return "Current active users: "+nodeHandler.nodesMap;
     }
-
 }
